@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            Video Game Data Visualization Dashboard (1981 - 2016)
+        </title>
+        <link
+            rel="stylesheet"
+            href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
+        />
+        <link rel="stylesheet" href="main.css" />
+        <!--Feel free to add more CSS files as needed-->
+        <script
+            type="text/javascript"
+            src="https://d3js.org/d3.v5.min.js"
+        ></script>
+    </head>
+    <body>
+        <div class="header">
+            <h3>
+                Video Game Data Visualization Dashboard (1981 - 2016)
+                <h4 class="genre-title center">Genre</h4>
+                <div id="graph2_buttons" class="center"></div>
+            </h3>
+        </div>
+        <!--  We included a basic HTML structure for the 3 graphs here. Feel free to change this if you'd like  -->
+        <div class="col">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div id="graph1"></div>
+                </div>
+                <div class="col-lg-6">
+                    <div id="graph2"></div>
+                </div>
+            </div>
+            <div class="center">
+                <div id="graph3"></div>
+            </div>
+            <div style="padding: 50px;">
+                <div class="center">
+                    <h3>Written Questions</h3>
+                </div>
+                <ol type="a">
+                    <li>
+                        <strong>
+                            Describe how your dashboard answers the questions
+                            presented. You don't have to address every question
+                            directly, but should at a high level address the
+                            main questions. (10 points)
+                        </strong>
+                        <br />
+
+                        <ol type="1">
+                            <li>
+                                I addressed the question of which are the Top 10
+                                Video Games of All Time in in the "Combined Top
+                                10 Video Game Sales of All Time" Bar Chart
+                                (which can also be sorted by Genre, but that is
+                                just a bonus) *note, I chose to aggregate the
+                                data by Name because some video game titles can
+                                be the same put exist on different platforms and
+                                I figured it was best to aggregate sales by the
+                                games themselves.
+                            </li>
+                            <li>
+                                I addressed the question of which Video Game
+                                genre is most popular by region by breaking the
+                                regions into the "Combined Total Sale By Region
+                                (NA, EU, JP, Other)" pie chart which can change
+                                base on the genre using the genre buttons above.
+                                If you hover over the labels, you can also see a
+                                tooltip of the top 5 games in that region for
+                                that genre as well as the total sale by genre
+                                for that region
+                            </li>
+                            <li>
+                                I addressed the question of which publisher has
+                                the best sale by genre in the "Top 10 Publisher
+                                in the [Genre Type] Genres Combined" which
+                                again, can be changed with the genre buttons
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <strong>
+                            List 3 reasons why D3 was helpful and improved your
+                            visualization (6 points)
+                        </strong>
+                        <br />
+
+                        <ol type="1">
+                            <li>
+                                Since the charts were so easily configurable
+                                based on different data, I was able to process
+                                the data based on the genre and display the
+                                corresponding chart, allowing one to easily
+                                explore the data by genre and easily visualize
+                                them.
+                            </li>
+                            <li>
+                                The ability to easily add a tooltip also allowed
+                                me to add additional information to the data
+                            </li>
+                            <li>
+                                The ability to customize styling, place titles,
+                                labels, and change them dynamically based on the
+                                data all added to greater readibility of the
+                                data and made visualization better.
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <strong>
+                            List 3 reasons why D3 would not be the best tool for
+                            creating a visualization (6 points)
+                        </strong>
+                        <br />
+
+                        <ol type="1">
+                            <li>
+                                If you are unfamiliar with HTML, JavaScript,
+                                CSS, there might be a learning curve with using
+                                D3, especially since you basically have to
+                                create a webpage to display the data.
+                            </li>
+                            <li>
+                                Some of the configurations of D3 seemed overly
+                                complicated, requiring you to configure a bunch
+                                of stuff before the graph can be seen. It seems
+                                like for simple visualizations, processing data
+                                in python and using matplotlib might be an
+                                easier solution.
+                            </li>
+                            <li>
+                                I noticed that the rendering of the graphs are
+                                not really responsive, for example, the eqge of
+                                the bar chart will not shrink if I shrink the
+                                window which might hinder readibility
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <strong>
+                            Give two different ways in which graphs may confuse
+                            or mislead viewers. What are ways to avoid this or
+                            fix these issues? (4 points)
+                        </strong>
+                        <br />
+
+                        <ol type="1">
+                            <li>
+                                Omitting the Baseline: If someone were to change
+                                the baseline from 0 to some other number and
+                                subsequently change the scale of the graph, a
+                                graph might look like it is displaying a large
+                                difference between data points when in reality
+                                the difference is slight. To avoid falling into
+                                this trap, always set the baseline to 0 or if
+                                you want to highlight the differences, makes
+                                sure to mention that the graph might not start
+                                at 0 and call attention to the scaling of the
+                                graph.
+                            </li>
+                            <li>
+                                Cherry Picking the Data: If someone were to only
+                                show a shortened range of the data, it might
+                                show some trend contrary to the actual data
+                                trend if the entire data range was shown. Make
+                                sure when you are displaying the data, let
+                                people know when these data points were taken
+                                and display the entire range, not to cherry pick
+                                the data, or if you do, make sure to include the
+                                rest of the data somehow or add a qualifier
+                                stating you are only showing some part of the
+                                data and the reason why
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <strong>
+                            Data visualizations can be found everywhere. Find a
+                            real world example of a strong data graphic and
+                            explain what it does well. Next, find a not-as-good
+                            data graphic and explain what it does poorly and how
+                            to improve it. Please include a photo or link of
+                            your examples alongside your answer. Some cool
+                            places to look for visualizations could be on
+                            Fivethirtyeight, the Economist, or perhaps even the
+                            course website! (6 points)
+                        </strong>
+                        <br />
+
+                        <ol type="1">
+                            <li>
+                                This graph of the oil prices throughout the
+                                years in $ per barrel from the Economist is a
+                                good graphic because it shows a nice range of
+                                data dating all the way to 1861 and provides
+                                context of world events to put in context the
+                                time frame of when these oil prices were. There
+                                even is a seperate continuation of the graph for
+                                2020 to highlight the COVID19 crisis. The
+                                numbers for $ of oil also starts from 0 and
+                                provides a clear and sensible range.
+
+                                <div class="center">
+                                    <img src="oil.png" class="img" />
+                                </div>
+                            </li>
+                            <li>
+                                This graphic of the grading breakdown from the
+                                course website is poor because the stated legend
+                                percentage does not match with the display on
+                                the pie chart. Labs is said to be worth 10% but
+                                based on the colored slice in the corresponding
+                                graph it looks closer to 50%. If the stated
+                                grade percentage match the included pie chart
+                                graphic, it would make a whole lot more sense
+                                <div class="center">
+                                    <img src="class.png" class="img" />
+                                </div>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <!--Feel free to add more JavaScript files as needed-->
+        <script type="text/javascript" src="main.js"></script>
+        <script type="text/javascript" src="graph1.js"></script>
+        <script type="text/javascript" src="graph2.js"></script>
+        <script type="text/javascript" src="graph3.js"></script>
+    </body>
+</html>
